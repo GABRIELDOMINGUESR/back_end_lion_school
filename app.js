@@ -16,10 +16,7 @@ app.use((request, response, next) => {
   next();
 });
 
-app.get(
-  "/v1/lion-school/cursos",
-  cors(),
-  async function (request, response, next) {
+app.get("/v1/lion-school/cursos", cors(), async function (request, response, next) {
     const cursos = require("./modulo/get-lista-cursos.js");
 
     let listaCursosJSON = {};
@@ -35,10 +32,7 @@ app.get(
   }
 );
 
-app.get(
-  "/v1/lion-school/alunos/:matricula",
-  cors(),
-  async function (request, response, next) {
+app.get( "/v1/lion-school/alunos/:matricula", cors(), async function (request, response, next) {
     const alunos = require("./modulo/get-aluno.js");
 
     let numeroMatricula = request.params.matricula;
@@ -68,10 +62,7 @@ app.get(
   }
 );
 
-app.get(
-  "/v1/lion-school/alunos",
-  cors(),
-  async function (request, response, next) {
+app.get( "/v1/lion-school/alunos", cors(), async function (request, response, next) {
     let alunosMatriculados = require("./modulo/get-lista-alunos-matriculados-curso.js");
     let alunosAno = require("./modulo/get-lista-alunos-ano.js");
     let alunosStatus = require("./modulo/get-lista-alunos-status.js");
@@ -201,10 +192,7 @@ app.get(
   }
 );
 
-app.get(
-  "/v1/lion-school/alunos-disciplinas/:matricula",
-  cors(),
-  async function (request, response, next) {
+app.get( "/v1/lion-school/alunos-disciplinas/:matricula", cors(), async function (request, response, next) {
     const alunos = require("./modulo/get-aluno.js");
 
     let numeroMatricula = request.params.matricula;
